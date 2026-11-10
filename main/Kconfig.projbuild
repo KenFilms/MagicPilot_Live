@@ -1,0 +1,108 @@
+menu "MagicPilot LIVE"
+
+    config HDMI_PREFERRED_WIDTH
+        int "Preferred capture width"
+        default 1280
+        help
+            The UVC format closest to this resolution is requested from the HDMI capture
+            adapter. 1280x720 maps 1:1 onto the Tab5 screen (no scaling).
+
+    config HDMI_PREFERRED_HEIGHT
+        int "Preferred capture height"
+        default 720
+
+    config HDMI_PREFERRED_FPS
+        int "Preferred capture frame rate"
+        default 30
+        range 1 60
+
+    choice HDMI_SCALE_MODE
+        prompt "Scaling mode"
+        default HDMI_SCALE_FILL
+        help
+            The PPA scaler works in 1/16 steps. If the source cannot be scaled exactly to
+            1280x720, FILL crops a few edge pixels so the picture covers the whole screen,
+            FIT keeps the whole picture (aspect ratio preserved) and adds black borders.
+
+        config HDMI_SCALE_FILL
+            bool "Fill whole screen"
+        config HDMI_SCALE_FIT
+            bool "Fit (letterbox, keep aspect ratio)"
+    endchoice
+
+    choice HDMI_ROTATION
+        prompt "Landscape orientation"
+        default HDMI_ROTATION_90
+        help
+            The Tab5 panel is natively portrait (720x1280). Select the other option if the
+            picture appears upside down.
+
+        config HDMI_ROTATION_90
+            bool "Rotate 90 degrees"
+        config HDMI_ROTATION_270
+            bool "Rotate 270 degrees"
+    endchoice
+
+    config HDMI_TOUCH_FLIP
+        bool "Turn touch input by 180 degrees"
+        default n
+        help
+            Enable if taps land on the opposite side of the screen (touch panel mounted the other
+            way round than the display on some Tab5 revisions).
+
+    config HDMI_JPEG_SWAP_RB
+        bool "Swap red/blue of decoded MJPEG frames"
+        default n
+        help
+            Enable if red and blue appear swapped when the adapter streams MJPEG.
+
+    config HDMI_BACKLIGHT_PERCENT
+        int "Display backlight (%)"
+        default 100
+        range 10 100
+
+    menu "Performance"
+
+        choice HDMI_PACING
+            prompt "Frame pacing"
+            default HDMI_PACING_AUTO
+            help
+                Present new frames on a fixed cadence of panel refreshes, so every frame stays on
+                screen equally long. Uneven cadence (2,3,2,3... refreshes) is seen as judder.
+
+            config HDMI_PACING_OFF
+                bool "Off (show each frame as soon as it is ready)"
+            config HDMI_PACING_AUTO
+                bool "Auto (from measured render time and source frame rate)"
+            config HDMI_PACING_FIXED
+                bool "Fixed number of refreshes per frame"
+        endchoice
+
+        config HDMI_PACING_REFRESHES
+            int "Refreshes per frame"
+            depends on HDMI_PACING_FIXED
+            default 3
+            range 1 6
+
+        config HDMI_BAND_RENDER
+            bool "Render in bands through internal SRAM"
+            default y
+            help
+                The PPA reads PSRAM slowly (~46 MB/s) but internal SRAM quickly. In band mode an
+                AXI GDMA (~114 MB/s from PSRAM) copies bands of source rows into internal SRAM and
+                the PPA rotates each band from there into the frame buffer, overlapped with the
+                copy of the next band. Used for 2-byte formats (RGB565, YUY2) when the vertical
+                scale is an integer (1280x720, 640x360, ...); other cases use the direct path.
+
+        config HDMI_BAND_ROWS
+            int "Maximum source rows per band"
+            depends on HDMI_BAND_RENDER
+            default 32
+            range 4 64
+            help
+                Three band buffers of 1280 x rows x 2 bytes are allocated in internal SRAM (the GDMA
+                fills one, the CPU composites the overlay into one, the PPA rotates one).
+
+    endmenu
+
+endmenu

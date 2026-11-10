@@ -1,0 +1,175 @@
+connected: changes 1ff state 83070cc2
+format reported: changes 042 state 1398bbb6
+iso reported: changes 002 state 09f814d9
+cam_set_iso(400)
+  send key 810e: ff 08 00 00 01 0e 03 00 90 01 00 00
+  after: changes 002 state 3ab9aae7
+cam_set_iso(25600)
+  send key 810e: ff 08 00 00 01 0e 03 00 00 64 00 00
+  after: changes 002 state 7ff9cb1a
+cam_set_shutter_angle(18000)
+  send key 810b: ff 08 00 00 01 0b 03 00 50 46 00 00
+  after: changes 002 state d1377e90
+cam_set_shutter_angle(17280)
+  send key 810b: ff 08 00 00 01 0b 03 00 80 43 00 00
+  after: changes 002 state 595ff19d
+cam_set_shutter_speed(50)
+  send key 810c: ff 08 00 00 01 0c 03 00 32 00 00 00
+  after: changes 002 state 41e6ce2b
+cam_set_shutter_speed(2000)
+  send key 810c: ff 08 00 00 01 0c 03 00 d0 07 00 00
+  after: changes 002 state 75f7fa14
+cam_set_project_fps(24, false)
+  send key 8109: ff 0e 00 00 01 09 02 00 18 00 00 00 00 18 80 0d 00 00 00 00
+  after: changes 002 state a0a99d16
+cam_set_project_fps(30, true)
+  send key 8109: ff 0e 00 00 01 09 02 00 1e 00 00 00 00 18 80 0d 03 00 00 00
+  after: changes 002 state 5d3b19e7
+check_refused at +3000000: 02
+  after: changes 042 state 75f7fa14
+cam_set_off_speed(true, 60)
+  send key 8109: ff 0e 00 00 01 09 02 00 19 00 3c 00 00 18 80 0d 04 00 00 00
+  after: changes 002 state 29fb398d
+cam_set_off_speed(true, 120)
+  send key 8109: ff 0e 00 00 01 09 02 00 19 00 78 00 00 18 80 0d 04 00 00 00
+  after: changes 002 state d3c25fd1
+cam_set_project_fps(24, true)
+  send key 8109: ff 0e 00 00 01 09 02 00 18 00 78 00 00 18 80 0d 05 00 00 00
+  after: changes 002 state 2f206ed1
+cam_set_off_speed(false, 0)
+  send key 8109: ff 0e 00 00 01 09 02 00 18 00 00 00 00 18 80 0d 03 00 00 00
+  after: changes 002 state 5d64ebf3
+check_refused at +3000000: 02
+  after: changes 042 state 75f7fa14
+cam_set_frame_rates(25, 50, 0)
+  send key 8109: ff 0e 00 00 01 09 02 00 19 00 00 00 00 18 80 0d 00 00 00 00
+  after: changes 002 state 75f7fa14
+cam_set_frame_rates(24, 60, CAM_FMT_OFF_SPEED | CAM_FMT_FILE_MRATE)
+  send key 8109: ff 0e 00 00 01 09 02 00 18 00 3c 00 00 18 80 0d 05 00 00 00
+  after: changes 002 state 8559488d
+cam_set_format(30, 120, CAM_FMT_OFF_SPEED, 2880, 1512, true)
+  send key 8109: ff 0e 00 00 01 09 02 00 1e 00 78 00 40 0b e8 05 14 00 00 00
+  after: changes 042 state 88219d1f
+cam_set_resolution(1920, 1080, true)
+  send key 8109: ff 0e 00 00 01 09 02 00 1e 00 78 00 80 07 38 04 14 00 00 00
+  after: changes 040 state 06c3974a
+cam_set_resolution(3840, 2160, false)
+  send key 8109: ff 0e 00 00 01 09 02 00 1e 00 78 00 00 0f 70 08 04 00 00 00
+  after: changes 040 state 8c8b37ae
+check_refused at +3000000: 02
+  after: changes 042 state 75f7fa14
+format reported again: changes 042 state 75f7fa14
+cam_set_resolution(4096, 2160, false)
+  send key 8109: ff 0e 00 00 01 09 02 00 19 00 00 00 00 10 70 08 00 00 00 00
+  after: changes 040 state 601e66d7
+format reported back (refused): changes 042 state 75f7fa14
+check_refused at +3000000: 00
+  after: changes 000 state 75f7fa14
+cam_set_wb(5600, 10)
+  send key 8102: ff 08 00 00 01 02 02 00 e0 15 0a 00
+  after: changes 002 state ecb3fa5e
+cam_set_wb(3200, -20)
+  send key 8102: ff 08 00 00 01 02 02 00 80 0c ec ff
+  after: changes 002 state fe8d1252
+cam_auto_wb()
+  send key 0000: ff 04 00 00 01 03 00 00
+  after: changes 000 state fe8d1252
+cam_iris_step(1)
+  send key 0000: ff 06 00 00 00 04 02 01 01 00 00 00
+  after: changes 000 state fe8d1252
+cam_iris_step(-2)
+  send key 0000: ff 06 00 00 00 04 02 01 fe ff 00 00
+  after: changes 000 state fe8d1252
+cam_set_iris_norm(512)
+  send key 8003: ff 06 00 00 00 03 80 00 00 02 00 00
+  after: changes 002 state db2b04f3
+cam_set_slate_text(CAM_SLATE_SCENE, "23A")
+  send key 8c02: ff 07 00 00 0c 02 05 00 32 33 41 00
+  after: changes 100 state db2b04f3
+cam_set_slate_tags(2, 1, 0)
+  send key 8c01: ff 07 00 00 0c 01 01 00 02 01 00 00
+  after: changes 100 state db2b04f3
+cam_set_slate_take(5, 1)
+  send key 8c03: ff 06 00 00 0c 03 01 00 05 01 00 00
+  after: changes 100 state db2b04f3
+cam_set_slate_good_take(true)
+  send key 8c04: ff 05 00 00 0c 04 00 00 01 00 00 00
+  after: changes 100 state db2b04f3
+cam_set_tools(0x05, 0x03)
+  send key 8401: ff 08 00 00 04 01 02 00 05 00 03 00
+  after: changes 040 state 3d722678
+cam_set_tools(0x00, 0x01)
+  send key 8401: ff 08 00 00 04 01 02 00 00 00 01 00
+  after: changes 040 state db2b04f3
+cam_set_overlay_enables(0x0E, 0x01)
+  send key 8300: ff 08 00 00 03 00 02 00 06 00 01 00
+  after: changes 040 state 20671ece
+cam_set_overlay_enables(0x00, 0x02)
+  send key 8300: ff 08 00 00 03 00 02 00 00 00 02 00
+  after: changes 040 state 66ebcc94
+cam_set_overlays(1, 60, 90, 3)
+  send key 8303: ff 08 00 00 03 03 01 00 01 3c 5a 03
+  after: changes 040 state 424c6e18
+cam_set_focus(1000)
+  send key c000: ff 06 00 00 00 00 80 01 e8 ff 00 00
+  after: changes 080 state bc0403af
+cam_set_focus(-5)
+  send key c000: ff 06 00 00 00 00 80 01 18 fc 00 00
+  after: changes 080 state d7c96414
+cam_set_focus(3000)
+  send key c000: ff 06 00 00 00 00 80 01 00 08 00 00
+  after: changes 080 state accf781c
+cam_autofocus()
+  send key 0000: ff 04 00 00 00 01 00 00
+  after: changes 080 state 424c6e18
+cam_set_ae_mode(2)
+  send key 810a: ff 05 00 00 01 0a 01 00 02 00 00 00
+  after: changes 002 state 9ea84b35
+cam_set_ae_mode(0)
+  send key 810a: ff 05 00 00 01 0a 01 00 00 00 00 00
+  after: changes 002 state 18cf7877
+cam_set_sharpening(2)
+  send key 8108: ff 05 00 00 01 08 01 00 02 00 00 00
+  after: changes 040 state c9c9f8d4
+cam_set_sharpening(0)
+  send key 8108: ff 05 00 00 01 08 01 00 00 00 00 00
+  after: changes 040 state baff8e96
+cam_record(true)
+  send key 0000: ff 05 00 00 0a 01 01 00 02 00 00 00
+  after: changes 000 state baff8e96
+cam_record(false)
+  send key 0000: ff 05 00 00 0a 01 01 00 00 00 00 00
+  after: changes 000 state baff8e96
+cam_play(1)
+  send key 0000: ff 06 00 00 0a 01 01 00 01 01 00 00
+  after: changes 008 state e4fc1eb6
+cam_play_loop(true)
+  send key 0000: ff 07 00 00 0a 01 01 00 01 01 01 00
+  after: changes 008 state d5cd2615
+cam_play_loop(false)
+  send key 0000: ff 07 00 00 0a 01 01 00 01 01 00 00
+  after: changes 008 state e4fc1eb6
+cam_clip_step(true)
+  send key 0000: ff 05 00 00 0a 02 01 00 01 00 00 00
+  after: changes 000 state e4fc1eb6
+cam_live()
+  send key 0000: ff 05 00 00 0a 01 01 00 00 00 00 00
+  after: changes 008 state baff8e96
+cam_set_tc_source(1)
+  send key 8407: ff 05 00 00 04 07 01 00 01 00 00 00
+  after: changes 004 state bcb46736
+cam_set_codec(3, 1)
+  send key 8a00: ff 06 00 00 0a 00 01 00 03 01 00 00
+  after: changes 040 state df5514f8
+cam_set_codec(2, 0)
+  send key 8a00: ff 06 00 00 0a 00 01 00 02 00 00 00
+  after: changes 040 state fb96f918
+check_refused at +3000000: 01
+  after: changes 042 state fb96f918
+cam_set_dynamic_range(1)
+  send key 8107: ff 05 00 00 01 07 01 00 01 00 00 00
+  after: changes 040 state 84ab159a
+check_refused at +3000000: 04
+  after: changes 042 state 84ab159a
+cam_reset_values()
+  after: changes 1fe state 7953435a

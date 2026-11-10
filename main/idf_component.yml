@@ -1,0 +1,10 @@
+dependencies:
+  idf: ">=5.5.3"
+  espressif/m5stack_tab5_noglib: "^1.3.2"
+  # usb_host_uvc 2.6.0 is vendored in ../components/usb_host_uvc (2.5+ fixes hot-unplug
+  # aborts and URB sizing needed for HDMI capture adapters).
+  # Bluetooth LE goes through the Tab5's ESP32-C6 co-processor (ESP-Hosted over SDIO).
+  # 2.12.13 matches the C6 slave image that ships with arduino-esp32 3.3.x.
+  espressif/esp_hosted: "==2.12.13"
+  espressif/esp_wifi_remote: "~1.6.5"
+  espressif/esp_lcd_touch: "^1.2.1"

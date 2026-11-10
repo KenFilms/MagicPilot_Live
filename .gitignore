@@ -1,0 +1,13 @@
+.claude/
+.pio/
+.vscode/
+build/
+docs/*
+!docs/index.html
+!docs/.nojekyll
+!docs/assets/
+managed_components/
+sdkconfig
+sdkconfig.m5stack-tab5
+sdkconfig.old
+tools/preview/preview

@@ -1,0 +1,76 @@
+menu "Board Support Package (M5Stack Tab5)"
+
+    config BSP_ERROR_CHECK
+        bool "Enable error check in BSP"
+        default y
+        help
+            Error check assert the application before returning the error code.
+    menu "I2C"
+        config BSP_I2C_NUM
+            int "I2C peripheral index"
+            default 1
+            range 0 1
+            help
+                Pick the I2C you want to use.
+    endmenu
+    menu "Display"
+        config BSP_DISPLAY_BRIGHTNESS_LEDC_CH
+        int "LEDC channel index"
+        default 1
+        range 0 7
+        help
+            LEDC channel is used to generate PWM signal that controls display brightness.
+            Set LEDC index that should be used.
+
+        config BSP_LCD_DRAW_BUF_HEIGHT
+        int "LCD framebuf height"
+        default 50
+        range 10 240
+        help
+            Framebuf is used for lvgl rendering output.
+
+        config BSP_LCD_DRAW_BUF_DOUBLE
+        bool "LCD double framebuf"
+        default y
+        help
+            Whether to enable double framebuf.
+        config BSP_LCD_USE_DMA2D
+            bool "Select whether to use DMA2D"
+            default "y"
+            help
+                Select whether to use DMA2D to draw the bitmap.
+        config BSP_LCD_DPI_BUFFER_NUMS
+            int "Set number of frame buffers"
+            default 1
+            range 1 3
+            help
+                Let DPI LCD driver create a specified number of frame-size buffers. Only when it is set to multiple can the avoiding tearing be turned on.
+
+        config BSP_LCD_REFRESH_HZ
+            int "Panel refresh rate (Hz, 0 = stock timing)"
+            default 0
+            range 0 70
+            help
+                [Local patch] Lengthens or shortens the vertical front porch so the panel refreshes
+                at about this rate. 0 keeps the stock timing (ILI9881C ~48 Hz, ST7123/ST7121 ~58 Hz).
+                A lower rate frees PSRAM bandwidth (scan-out reads the whole frame buffer every
+                refresh) and lets video run at an even cadence (e.g. 2 refreshes per frame).
+
+        config BSP_DISPLAY_LVGL_AVOID_TEAR
+            bool "Avoid tearing effect"
+            depends on BSP_LCD_DPI_BUFFER_NUMS > 1
+            default "n"
+            help
+                Avoid tearing effect through LVGL buffer mode and double frame buffers of LCD.
+
+        choice BSP_DISPLAY_LVGL_MODE
+            depends on BSP_DISPLAY_LVGL_AVOID_TEAR
+            prompt "Select LVGL buffer mode"
+            default BSP_DISPLAY_LVGL_FULL_REFRESH
+            config BSP_DISPLAY_LVGL_FULL_REFRESH
+                bool "Full refresh"
+            config BSP_DISPLAY_LVGL_DIRECT_MODE
+                bool "Direct mode"
+        endchoice
+    endmenu
+endmenu
