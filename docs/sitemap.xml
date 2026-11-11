@@ -2,19 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
-    <loc>https://kenfilms.github.io/MagicPilot_LIVE/</loc>
+    <loc>https://kenfilms.github.io/MagicPilot_Live/</loc>
     <lastmod>2026-11-11</lastmod>
     <image:image>
-      <image:loc>https://kenfilms.github.io/MagicPilot_LIVE/images/screen-photo.svg</image:loc>
+      <image:loc>https://kenfilms.github.io/MagicPilot_Live/images/screen-photo.svg</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://kenfilms.github.io/MagicPilot_LIVE/images/collage.jpg</image:loc>
+      <image:loc>https://kenfilms.github.io/MagicPilot_Live/images/collage.jpg</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://kenfilms.github.io/MagicPilot_LIVE/images/views.jpg</image:loc>
+      <image:loc>https://kenfilms.github.io/MagicPilot_Live/images/views.jpg</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://kenfilms.github.io/MagicPilot_LIVE/images/rig-overview.jpg</image:loc>
+      <image:loc>https://kenfilms.github.io/MagicPilot_Live/images/rig-overview.jpg</image:loc>
     </image:image>
   </url>
 </urlset>
