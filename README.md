@@ -1,4 +1,18 @@
-# MagicPilot LIVE – Cam Monitor & BT remote for the BMPCC6K on the M5Stack Tab5
+# ✨ MagicPilot LIVE: Monitor & Bluetooth Remote for the Blackmagic Pocket Cinema Camera 6K
+
+### 🎬 A touchscreen monitor and remote for the BMPCC6K, built on the M5Stack Tab5 (ESP32-P4).
+
+🌐 **Website:** [kenfilms.github.io/MagicPilot_LIVE](https://kenfilms.github.io/MagicPilot_LIVE/)
+
+![BlackmagicCameraControl](https://img.shields.io/badge/BlackmagicCameraControl-Aug_2025-green)
+![ESP-IDF](https://img.shields.io/badge/ESP--IDF-5.5.5-green)
+![Platform](https://img.shields.io/badge/platform-M5Stack%20Tab5-blue)
+![MCU](https://img.shields.io/badge/MCU-ESP32--P4-E7352C)
+![Build](https://img.shields.io/badge/build-PlatformIO-00979D)
+![Camera](https://img.shields.io/badge/camera-BMPCC6K-black)
+![Video](https://img.shields.io/badge/video-HDMI%20%E2%86%92%20USB%20UVC-8A2BE2)
+
+![MagicPilot LIVE in the PRO view on the Tab5, showing the live picture, with each part of the screen labelled](images/screen-photo.svg)
 
 MagicPilot LIVE turns an **M5Stack Tab5** into a monitor and touch remote for the
 **Blackmagic Pocket Cinema Camera 6K**: the camera's live HDMI picture, with the camera's settings
@@ -22,9 +36,13 @@ No phone, no Wi-Fi, no Blackmagic Camera app.
 | 📐 | **Display tools** | Frame guides, grid, safe area, brightness. |
 | 🔗 | **Pairing** | Asks for the camera's PIN once, then reconnects automatically. |
 
+![MagicPilot LIVE on the Tab5: the LITE view over the camera's live picture while recording, the presets page, and a close-up of the quick slate with scene, take, INT/EXT and DAY/NIGHT](images/collage.jpg)
+
+*LITE view while recording, the presets page, and the quick slate.*
+
 ## Hardware
 
-![M5Stack Tab5 on a wireless HDMI receiver, with an HDMI to USB-A capture adapter in its USB-A port](images/rig-overview.jpg)
+![M5Stack Tab5 with a V-mount plate and mini V-mount battery on its back; a wireless HDMI receiver and an HDMI to USB capture adapter ride on top, with a braided cable to the USB-A port](images/rig-overview.jpg)
 
 - **M5Stack Tab5** (ESP32-P4). Tested: board version 3, ESP32-C6 with its factory firmware.
 - **HDMI to USB capture adapter** (UVC, MJPEG, e.g. MS2109 or MS2130 sticks) in the Tab5's **USB-A**

@@ -1,0 +1,3 @@
+# GitHub language stats and highlighting: count the firmware sources as C++
+*.c linguist-language=C++
+*.h linguist-language=C++
