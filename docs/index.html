@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>MagicPilot LIVE – HDMI Monitor &amp; Bluetooth Remote for Blackmagic BMPCC6K (M5Stack Tab5)</title>
-  <meta name="description" content="Free firmware that turns an M5Stack Tab5 into an on-camera monitor and touch remote for the Blackmagic Pocket Cinema Camera 6K: the camera's live HDMI picture under a camera-style overlay, with presets, slate, focus and recording over Bluetooth LE.">
-  <meta name="keywords" content="Blackmagic monitor, BMPCC6K monitor, BMPCC6K remote, Blackmagic Pocket Cinema Camera 6K Bluetooth remote, Blackmagic Camera Control, M5Stack Tab5, ESP32-P4, HDMI to USB capture, UVC, wireless HDMI monitor, field monitor, open source camera remote">
+  <title>MagicPilot LIVE – Wired or Wireless Monitor &amp; Bluetooth Remote for Blackmagic Pocket Cinema Cameras (M5Stack Tab5)</title>
+  <meta name="description" content="Free firmware that turns an M5Stack Tab5 into a wired or wireless monitor and touch remote for Blackmagic Pocket Cinema Cameras, tested with the BMPCC6K: the camera's live HDMI picture under a camera-style overlay, with presets, slate, focus and recording over Bluetooth LE.">
+  <meta name="keywords" content="Blackmagic monitor, BMPCC6K monitor, BMPCC6K remote, BMPCC4K remote, wireless camera monitor, Blackmagic Pocket Cinema Camera 6K Bluetooth remote, Blackmagic Camera Control, M5Stack Tab5, ESP32-P4, HDMI to USB capture, UVC, wireless HDMI monitor, field monitor, open source camera remote">
   <meta name="author" content="KenFilms">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#0a0a1a">
@@ -13,8 +13,8 @@
 
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="MagicPilot LIVE">
-  <meta property="og:title" content="MagicPilot LIVE – HDMI Monitor &amp; Bluetooth Remote for the Blackmagic BMPCC6K">
-  <meta property="og:description" content="The camera's live HDMI picture with its settings laid over it, on an M5Stack Tab5. Tap a setting to change it over Bluetooth LE. No phone, no app.">
+  <meta property="og:title" content="MagicPilot LIVE – Wired or Wireless Monitor &amp; Bluetooth Remote for Blackmagic Pocket Cinema Cameras">
+  <meta property="og:description" content="The camera's live HDMI picture, by cable or wireless, with its settings laid over it, on an M5Stack Tab5. Tap a setting to change it over Bluetooth LE. No phone, no app.">
   <meta property="og:url" content="https://kenfilms.github.io/MagicPilot_Live/">
   <meta property="og:image" content="https://kenfilms.github.io/MagicPilot_Live/images/social-preview.jpg">
   <meta property="og:image:width" content="1280">
@@ -22,8 +22,8 @@
   <meta property="og:image:alt" content="MagicPilot LIVE on an M5Stack Tab5 showing a Blackmagic camera's live picture under the camera overlay">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="MagicPilot LIVE – HDMI Monitor &amp; Bluetooth Remote for the Blackmagic BMPCC6K">
-  <meta name="twitter:description" content="Live HDMI monitor and Bluetooth remote for the Blackmagic Pocket Cinema Camera 6K, on the M5Stack Tab5.">
+  <meta name="twitter:title" content="MagicPilot LIVE – Wired or Wireless Monitor &amp; Bluetooth Remote for Blackmagic Pocket Cinema Cameras">
+  <meta name="twitter:description" content="Wired or wireless HDMI monitor and Bluetooth remote for Blackmagic Pocket Cinema Cameras on the M5Stack Tab5. Tested with the BMPCC6K.">
   <meta name="twitter:image" content="https://kenfilms.github.io/MagicPilot_Live/images/social-preview.jpg">
 
   <script type="application/ld+json">
@@ -35,7 +35,7 @@
         "@id": "https://kenfilms.github.io/MagicPilot_Live/#software",
         "name": "MagicPilot LIVE",
         "alternateName": ["MagicPilot", "MagicPilot_LIVE"],
-        "description": "Firmware that turns an M5Stack Tab5 (ESP32-P4) into an HDMI monitor and touch remote for the Blackmagic Pocket Cinema Camera 6K (BMPCC6K): the camera's HDMI picture from a USB capture adapter under a camera-style overlay, with camera control over Bluetooth LE.",
+        "description": "Firmware that turns an M5Stack Tab5 (ESP32-P4) into a wired or wireless HDMI monitor and touch remote for Blackmagic Pocket Cinema Cameras, tested with the BMPCC6K: the camera's HDMI picture from a USB capture adapter under a camera-style overlay, with camera control over Bluetooth LE.",
         "url": "https://kenfilms.github.io/MagicPilot_Live/",
         "downloadUrl": "https://github.com/KenFilms/MagicPilot_Live",
         "applicationCategory": "MultimediaApplication",
@@ -86,12 +86,12 @@
           {
             "@type": "Question",
             "name": "Which Blackmagic cameras are supported?",
-            "acceptedAnswer": { "@type": "Answer", "text": "The Blackmagic Pocket Cinema Camera 6K is tested. The 6K G2, 6K Pro and 4K use the same protocol but haven't been tested yet." }
+            "acceptedAnswer": { "@type": "Answer", "text": "The Blackmagic Pocket Cinema Camera 6K is tested. The 6K G2 and 6K Pro share its sensor and modes and are very likely to work as is. On the Pocket 4K and other Blackmagic Bluetooth cameras, status and controls should work, but the resolutions, frame-rate limits and media slots are the 6K's. The live picture works with any camera that has an HDMI output." }
           },
           {
             "@type": "Question",
             "name": "What can't be changed over Bluetooth?",
-            "acceptedAnswer": { "@type": "Answer", "text": "The camera doesn't send card names, audio levels, custom white balance or playback over Bluetooth. It refuses switching between BRAW and ProRes, ProRes resolutions and Film dynamic range, and the LUT can't be switched on or off; the Tab5 tells you to set those on the camera." }
+            "acceptedAnswer": { "@type": "Answer", "text": "The BMPCC6K refuses switching between BRAW and ProRes, ProRes resolutions, Film dynamic range and the LUT over Bluetooth; the Tab5 tells you to set those on the camera. It doesn't send card names, capacity, audio levels, custom white balance, zebra, focus assist, false colour or playback, so the Tab5 can't show them." }
           },
           {
             "@type": "Question",
@@ -136,15 +136,15 @@
 </head>
 <body>
   <header>
-    <h1>MagicPilot <span class="live">LIVE</span>: HDMI Monitor &amp; Bluetooth Remote for the Blackmagic Pocket Cinema Camera 6K</h1>
-    <p class="lead">Turn an <strong>M5Stack Tab5</strong> into a monitor and touch remote for the <strong>BMPCC6K</strong>: the camera's live HDMI picture, with the camera's settings laid over it. Tap a setting to change it over <strong>Bluetooth LE</strong>. No phone, no Wi-Fi, no app.</p>
+    <h1>MagicPilot <span class="live">LIVE</span>: Wired or Wireless Monitor &amp; Bluetooth Remote for Blackmagic Pocket Cinema Cameras</h1>
+    <p class="lead">Turn an <strong>M5Stack Tab5</strong> into a monitor and touch remote for Blackmagic cameras, tested with the <strong>BMPCC6K</strong>: the camera's live HDMI picture, by cable or wireless, with the camera's settings laid over it. Tap a setting to change it over <strong>Bluetooth LE</strong>. No phone, no Wi-Fi, no app.</p>
     <a class="btn" href="https://github.com/KenFilms/MagicPilot_Live" target="_blank" rel="noopener">View on GitHub</a>
     <a class="btn secondary" href="https://github.com/KenFilms/MagicPilot_Live#build-and-flash" target="_blank" rel="noopener">Build &amp; flash guide</a>
   </header>
 
   <main>
     <figure>
-      <a href="images/screen-photo.svg"><img src="images/screen-photo.svg" width="1800" height="1113" fetchpriority="high"
+      <a href="images/screen-photo.svg" target="_blank" rel="noopener"><img src="images/screen-photo.svg" width="1800" height="1113" fetchpriority="high"
            alt="MagicPilot LIVE in the PRO view on an M5Stack Tab5, showing the camera's live picture, with each part of the screen labelled"></a>
       <figcaption>The PRO view over the camera's live HDMI picture, with every part of the screen labelled.</figcaption>
     </figure>
@@ -173,7 +173,7 @@
     <section id="screens">
       <h2>On the Tab5</h2>
       <figure>
-        <a href="images/collage.jpg"><img src="images/collage.jpg" width="2249" height="1541" loading="lazy"
+        <a href="images/collage.jpg" target="_blank" rel="noopener"><img src="images/collage.jpg" width="2249" height="1541" loading="lazy"
              alt="MagicPilot LIVE on the Tab5: the LITE view over the camera's live picture while recording, the presets page, and a close-up of the quick slate with scene, take, INT/EXT and DAY/NIGHT"></a>
         <figcaption>LITE view while recording, the presets page, and the quick slate.</figcaption>
       </figure>
@@ -184,7 +184,7 @@
       <p>The VIEW button switches between <strong>LITE</strong>, with fewer and bigger controls, and <strong>PRO</strong>, with the CLEAN FEED … FALSE COLOR buttons, the slate and the CODEC/QUALITY box. With live view off, or without the capture adapter, the Tab5 is a Bluetooth remote with bigger controls.</p>
       <p>With HDMI input, the CLEAN FEED … FALSE COLOR buttons act on the camera's HDMI output, so they change the video on the Tab5. Without it, they change the view on the camera's own LCD.</p>
       <figure>
-        <a href="images/views.jpg"><img src="images/views.jpg" width="1800" height="1545" loading="lazy"
+        <a href="images/views.jpg" target="_blank" rel="noopener"><img src="images/views.jpg" width="1800" height="1545" loading="lazy"
              alt="The Tab5 screen in LITE and PRO view, with HDMI input showing the live picture and without HDMI input as a remote"></a>
         <figcaption>Screens drawn by the firmware's own UI code.</figcaption>
       </figure>
@@ -193,14 +193,14 @@
     <section id="hardware">
       <h2>Hardware</h2>
       <figure>
-        <a href="images/rig-overview.jpg"><img src="images/rig-overview.jpg" width="1800" height="1125" loading="lazy"
+        <a href="images/rig-overview.jpg" target="_blank" rel="noopener"><img src="images/rig-overview.jpg" width="1800" height="1125" loading="lazy"
              alt="Drawing of the M5Stack Tab5 with a V-mount plate and mini V-mount battery on its back; a wireless HDMI receiver with an HDMI to USB capture adapter plugged into it sits on top, with a braided cable to the Tab5's USB-A port and USB-C power cables from the battery"></a>
         <figcaption>One way to build it: Tab5 on a V-mount plate with a mini V-mount battery, a wireless HDMI receiver and the capture adapter on top.</figcaption>
       </figure>
       <ul>
         <li><strong>M5Stack Tab5</strong> (ESP32-P4, 5″ 1280×720 touchscreen); its ESP32-C6 handles Bluetooth</li>
         <li><strong>HDMI to USB capture adapter</strong> (UVC with MJPEG, e.g. MS2109 or MS2130 sticks) in the Tab5's <strong>USB-A</strong> port, the only high-speed port</li>
-        <li><strong>Blackmagic Pocket Cinema Camera 6K</strong> with Bluetooth on</li>
+        <li><strong>Blackmagic Pocket Cinema Camera 6K</strong> with Bluetooth on (other cameras: see <a href="#compatibility">camera compatibility</a>)</li>
         <li>Optional: a <strong>wireless HDMI transmitter and receiver</strong> between camera and adapter, a battery, and a FAT32 <strong>microSD card</strong> for presets</li>
       </ul>
     </section>
@@ -218,15 +218,17 @@ idf.py build flash monitor</code></pre>
 
     <section id="compatibility">
       <h2>Camera compatibility</h2>
+      <p>The live picture works with any camera that has an HDMI output. Camera control uses the Blackmagic Camera Control Bluetooth protocol that Blackmagic's Bluetooth cameras share, but only the BMPCC6K is tested.</p>
       <table>
-        <thead><tr><th>Camera</th><th>Status</th></tr></thead>
+        <thead><tr><th>Camera</th><th>Status</th><th>Notes</th></tr></thead>
         <tbody>
-          <tr><td>Blackmagic Pocket Cinema Camera 6K (BMPCC6K)</td><td>🟢 Supported</td></tr>
-          <tr><td>Blackmagic Pocket Cinema Camera 6K G2</td><td>🟡 Not tested</td></tr>
-          <tr><td>Blackmagic Pocket Cinema Camera 6K Pro</td><td>🟡 Not tested</td></tr>
-          <tr><td>Blackmagic Pocket Cinema Camera 4K (BMPCC4K)</td><td>🟡 Not tested</td></tr>
+          <tr><td>Pocket Cinema Camera 6K (BMPCC6K)</td><td>🟢 Tested</td><td></td></tr>
+          <tr><td>Pocket Cinema Camera 6K G2 / 6K Pro</td><td>🟡 Not tested</td><td>Same sensor and modes as the 6K: very likely to work as is</td></tr>
+          <tr><td>Pocket Cinema Camera 4K (BMPCC4K)</td><td>🟡 Not tested</td><td>Status and controls should work; the format menu lists the 6K's modes</td></tr>
+          <tr><td>Other Blackmagic cameras with Bluetooth</td><td>🟡 Not tested</td><td>Basic control should work; resolutions, frame-rate limits and media slots need adapting</td></tr>
         </tbody>
       </table>
+      <p>Reports from other cameras are welcome.</p>
     </section>
 
     <section id="faq">
@@ -245,11 +247,11 @@ idf.py build flash monitor</code></pre>
       </details>
       <details>
         <summary>Which Blackmagic cameras are supported?</summary>
-        <p>The Blackmagic Pocket Cinema Camera 6K is tested. The 6K G2, 6K Pro and 4K use the same protocol but haven't been tested yet.</p>
+        <p>The Blackmagic Pocket Cinema Camera 6K is tested. The 6K G2 and 6K Pro share its sensor and modes and are very likely to work as is. On the Pocket 4K and other Blackmagic Bluetooth cameras, status and controls should work, but the resolutions, frame-rate limits and media slots are the 6K's. The live picture works with any camera that has an HDMI output.</p>
       </details>
       <details>
         <summary>What can't be changed over Bluetooth?</summary>
-        <p>The camera doesn't send card names, audio levels, custom white balance or playback over Bluetooth. It refuses switching between BRAW and ProRes, ProRes resolutions and Film dynamic range, and the LUT can't be switched on or off; the Tab5 tells you to set those on the camera.</p>
+        <p>The BMPCC6K refuses switching between BRAW and ProRes, ProRes resolutions, Film dynamic range and the LUT over Bluetooth; the Tab5 tells you to set those on the camera. It doesn't send card names, capacity, audio levels, custom white balance, zebra, focus assist, false colour or playback, so the Tab5 can't show them.</p>
       </details>
       <details>
         <summary>Is MagicPilot LIVE free?</summary>
