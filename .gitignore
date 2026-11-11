@@ -5,7 +5,8 @@ build/
 docs/*
 !docs/index.html
 !docs/.nojekyll
-!docs/assets/
+!docs/sitemap.xml
+!docs/images/
 managed_components/
 sdkconfig
 sdkconfig.m5stack-tab5
