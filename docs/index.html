@@ -14,7 +14,7 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="MagicPilot LIVE">
   <meta property="og:title" content="MagicPilot LIVE – Wired or Wireless Monitor &amp; Bluetooth Remote for Blackmagic Pocket Cinema Cameras">
-  <meta property="og:description" content="The camera's live HDMI picture, by cable or wireless, with its settings laid over it, on an M5Stack Tab5. Tap a setting to change it over Bluetooth LE. No phone, no app.">
+  <meta property="og:description" content="The camera's live HDMI picture, by cable or wireless, with its settings laid over it, on an M5Stack Tab5. Settings the camera hides in its menus are one tap away on the main screen, changed over Bluetooth LE. About $80 wired or $120 wireless. No phone, no app.">
   <meta property="og:url" content="https://kenfilms.github.io/MagicPilot_Live/">
   <meta property="og:image" content="https://kenfilms.github.io/MagicPilot_Live/images/social-preview.jpg">
   <meta property="og:image:width" content="1280">
@@ -23,7 +23,7 @@
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="MagicPilot LIVE – Wired or Wireless Monitor &amp; Bluetooth Remote for Blackmagic Pocket Cinema Cameras">
-  <meta name="twitter:description" content="Wired or wireless HDMI monitor and Bluetooth remote for Blackmagic Pocket Cinema Cameras on the M5Stack Tab5. Tested with the BMPCC6K.">
+  <meta name="twitter:description" content="Wired or wireless HDMI monitor and Bluetooth remote for Blackmagic Pocket Cinema Cameras on the M5Stack Tab5, with settings from the camera's menus on the main screen. About $80 wired or $120 wireless. Tested with the BMPCC6K.">
   <meta name="twitter:image" content="https://kenfilms.github.io/MagicPilot_Live/images/social-preview.jpg">
 
   <script type="application/ld+json">
@@ -35,14 +35,14 @@
         "@id": "https://kenfilms.github.io/MagicPilot_Live/#software",
         "name": "MagicPilot LIVE",
         "alternateName": ["MagicPilot", "MagicPilot_LIVE"],
-        "description": "Firmware that turns an M5Stack Tab5 (ESP32-P4) into a wired or wireless HDMI monitor and touch remote for Blackmagic Pocket Cinema Cameras, tested with the BMPCC6K: the camera's HDMI picture from a USB capture adapter under a camera-style overlay, with camera control over Bluetooth LE.",
+        "description": "Firmware that turns an M5Stack Tab5 (ESP32-P4) into a wired or wireless HDMI monitor and touch remote for Blackmagic Pocket Cinema Cameras, tested with the BMPCC6K: the camera's HDMI picture from a USB capture adapter under a camera-style overlay, with camera control over Bluetooth LE and settings from the camera's menus on the main screen.",
         "url": "https://kenfilms.github.io/MagicPilot_Live/",
         "downloadUrl": "https://github.com/KenFilms/MagicPilot_Live",
         "applicationCategory": "MultimediaApplication",
         "applicationSubCategory": "Camera monitor and remote control",
         "operatingSystem": "ESP32-P4 (M5Stack Tab5)",
         "image": "https://kenfilms.github.io/MagicPilot_Live/images/rig-overview.jpg",
-        "screenshot": "https://kenfilms.github.io/MagicPilot_Live/images/collage.jpg",
+        "screenshot": ["https://kenfilms.github.io/MagicPilot_Live/images/pro-view-hdmi.svg", "https://kenfilms.github.io/MagicPilot_Live/images/collage.jpg"],
         "license": "https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html",
         "isAccessibleForFree": true,
         "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
@@ -51,6 +51,7 @@
           "The camera's live HDMI picture at 30 fps from a USB capture adapter",
           "Camera-style overlay: FPS, shutter, iris, timecode, ISO, white balance, tint, LUT, recording and card slots",
           "Tap a value to change it on the camera over Bluetooth LE",
+          "Settings from the camera's menus on the main screen: codec and quality, slate, clean feed, zebra, focus assist, false colour, guides",
           "LITE and PRO views, and a remote-only mode without HDMI input",
           "12 named camera presets, saved to microSD as JSON",
           "The camera's slate, focus slider and one-shot autofocus, record start and stop"
@@ -137,7 +138,7 @@
 <body>
   <header>
     <h1>MagicPilot <span class="live">LIVE</span>: Wired or Wireless Monitor &amp; Bluetooth Remote for Blackmagic Pocket Cinema Cameras</h1>
-    <p class="lead">Turn an <strong>M5Stack Tab5</strong> into a monitor and touch remote for Blackmagic cameras, tested with the <strong>BMPCC6K</strong>: the camera's live HDMI picture, by cable or wireless, with the camera's settings laid over it. Tap a setting to change it over <strong>Bluetooth LE</strong>. Settings the camera hides in its menus are right on the main screen, one tap away. No phone, no Wi-Fi, no app.</p>
+    <p class="lead">Turn an <strong>M5Stack Tab5</strong> into a monitor and touch remote for Blackmagic cameras, tested with the <strong>BMPCC6K</strong>: the camera's live HDMI picture, by cable or wireless, with the camera's settings laid over it. Tap a setting to change it over <strong>Bluetooth LE</strong>. Settings the camera hides in its menus are right on the main screen, one tap away. About <strong>$80</strong> wired or <strong>$120</strong> wireless. No phone, no Wi-Fi, no app.</p>
     <a class="btn" href="https://github.com/KenFilms/MagicPilot_Live" target="_blank" rel="noopener">View on GitHub</a>
     <a class="btn secondary" href="https://github.com/KenFilms/MagicPilot_Live#build-and-flash" target="_blank" rel="noopener">Build &amp; flash guide</a>
   </header>
@@ -210,6 +211,7 @@
         <li><strong>Blackmagic Pocket Cinema Camera 6K</strong> with Bluetooth on (other cameras: see <a href="#compatibility">camera compatibility</a>)</li>
         <li>Optional: a <strong>wireless HDMI transmitter and receiver</strong> between camera and adapter, a battery, and a FAT32 <strong>microSD card</strong> for presets</li>
       </ul>
+      <p><strong>Cost</strong> (without the camera and without the M5 Tab battery): about <strong>$80</strong> wired (Tab5, capture adapter and HDMI cable), or about <strong>$120</strong> wireless (with an HDMI transmitter and receiver).</p>
     </section>
 
     <section id="build">
