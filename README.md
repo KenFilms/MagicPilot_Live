@@ -1,6 +1,6 @@
-# ✨ MagicPilot LIVE: Wired or Wireless Monitor & Bluetooth Remote for Blackmagic Pocket Cinema Cameras
+# ✨ MagicPilot LIVE: Wireless (or Wired) Monitor & Bluetooth Remote for Blackmagic Pocket Cinema Cameras
 
-### 🎬 A touchscreen monitor and remote for Blackmagic cameras that puts settings hidden in the camera's menus on the main screen, one tap away. About $80 wired or $120 wireless, built on the M5Stack Tab5 (ESP32-P4) and tested with the BMPCC6K.
+### 🎬 A Blackmagic camera touchscreen monitor and remote that puts settings hidden in the camera's menus on the main screen, one tap away. The whole thing for only $80 wired or $120 wireless.
 
 🌐 **Website:** [kenfilms.github.io/MagicPilot_Live](https://kenfilms.github.io/MagicPilot_Live/)
 
