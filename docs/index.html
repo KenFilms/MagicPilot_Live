@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MagicPilot LIVE – Wired or Wireless Monitor &amp; Bluetooth Remote for Blackmagic Pocket Cinema Cameras (M5Stack Tab5)</title>
-  <meta name="description" content="Free firmware that turns an M5Stack Tab5 into a wired or wireless monitor and touch remote for Blackmagic Pocket Cinema Cameras, tested with the BMPCC6K: the camera's live HDMI picture under a camera-style overlay, with presets, slate, focus and recording over Bluetooth LE.">
+  <meta name="description" content="Free firmware that turns an M5Stack Tab5 into a wired or wireless monitor and touch remote for Blackmagic Pocket Cinema Cameras, tested with the BMPCC6K: the camera's live HDMI picture under a camera-style overlay, with presets, slate, focus and recording over Bluetooth LE, and settings the camera hides in its menus on the main screen.">
   <meta name="keywords" content="Blackmagic monitor, BMPCC6K monitor, BMPCC6K remote, BMPCC4K remote, wireless camera monitor, Blackmagic Pocket Cinema Camera 6K Bluetooth remote, Blackmagic Camera Control, M5Stack Tab5, ESP32-P4, HDMI to USB capture, UVC, wireless HDMI monitor, field monitor, open source camera remote">
   <meta name="author" content="KenFilms">
   <meta name="robots" content="index, follow">
@@ -137,21 +137,28 @@
 <body>
   <header>
     <h1>MagicPilot <span class="live">LIVE</span>: Wired or Wireless Monitor &amp; Bluetooth Remote for Blackmagic Pocket Cinema Cameras</h1>
-    <p class="lead">Turn an <strong>M5Stack Tab5</strong> into a monitor and touch remote for Blackmagic cameras, tested with the <strong>BMPCC6K</strong>: the camera's live HDMI picture, by cable or wireless, with the camera's settings laid over it. Tap a setting to change it over <strong>Bluetooth LE</strong>. No phone, no Wi-Fi, no app.</p>
+    <p class="lead">Turn an <strong>M5Stack Tab5</strong> into a monitor and touch remote for Blackmagic cameras, tested with the <strong>BMPCC6K</strong>: the camera's live HDMI picture, by cable or wireless, with the camera's settings laid over it. Tap a setting to change it over <strong>Bluetooth LE</strong>. Settings the camera hides in its menus are right on the main screen, one tap away. No phone, no Wi-Fi, no app.</p>
     <a class="btn" href="https://github.com/KenFilms/MagicPilot_Live" target="_blank" rel="noopener">View on GitHub</a>
     <a class="btn secondary" href="https://github.com/KenFilms/MagicPilot_Live#build-and-flash" target="_blank" rel="noopener">Build &amp; flash guide</a>
   </header>
 
   <main>
     <figure>
-      <a href="images/screen-photo.svg" target="_blank" rel="noopener"><img src="images/screen-photo.svg" width="1800" height="1113" fetchpriority="high"
-           alt="MagicPilot LIVE in the PRO view on an M5Stack Tab5, showing the camera's live picture, with each part of the screen labelled"></a>
-      <figcaption>The PRO view over the camera's live HDMI picture, with every part of the screen labelled.</figcaption>
+      <a href="images/pro-view-hdmi.svg" target="_blank" rel="noopener"><img src="images/pro-view-hdmi.svg" width="1800" height="995" fetchpriority="high"
+           alt="MagicPilot LIVE on the Tab5 in the PRO view, over the camera's live HDMI picture, with each part of the screen labelled"></a>
+      <figcaption>The PRO view over the camera's live HDMI picture, drawn by the firmware's own UI code. Colours show where each setting lives on the camera.</figcaption>
+    </figure>
+
+    <figure>
+      <a href="images/screen-photo.svg" target="_blank" rel="noopener"><img src="images/screen-photo.svg" width="1800" height="710" loading="lazy"
+           alt="MagicPilot LIVE on an M5Stack Tab5 in the wireless configuration, with the HDMI RX, capture adapter, battery, plate and ports labelled"></a>
+      <figcaption>The wireless configuration: the hardware on the Tab5, labelled.</figcaption>
     </figure>
 
     <section id="why">
       <h2>Why a monitor and remote in one?</h2>
       <p><strong>One screen for picture and settings.</strong> The Tab5 shows what the camera sees and what it is set to, laid out like the camera's own screen, so you can frame, check focus and change exposure without looking away.</p>
+      <p><strong>Everything on the main screen.</strong> Many settings that the BMPCC6K keeps in its menus are one tap away on MagicPilot LIVE's main screen: codec and quality, the slate, clean feed, zebra, focus assist, false colour and guides. Camera presets and the NEAR → FAR focus slider aren't on the camera at all. You change them while you watch the picture, instead of digging through menus.</p>
       <p><strong>When the camera is out of reach.</strong> On a crane, a jib or a car mount, a wireless HDMI link brings the picture to the Tab5, and Bluetooth LE lets you change settings, pull focus and start recording from where you stand.</p>
     </section>
 

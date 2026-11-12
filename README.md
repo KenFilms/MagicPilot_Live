@@ -1,6 +1,6 @@
 # ✨ MagicPilot LIVE: Wired or Wireless Monitor & Bluetooth Remote for Blackmagic Pocket Cinema Cameras
 
-### 🎬 A touchscreen monitor and remote for Blackmagic cameras, tested with the BMPCC6K, built on the M5Stack Tab5 (ESP32-P4).
+### 🎬 A touchscreen monitor and remote for Blackmagic cameras that puts settings hidden in the camera's menus on the main screen, one tap away. About $80 wired or $120 wireless, built on the M5Stack Tab5 (ESP32-P4) and tested with the BMPCC6K.
 
 🌐 **Website:** [kenfilms.github.io/MagicPilot_Live](https://kenfilms.github.io/MagicPilot_Live/)
 
@@ -12,14 +12,25 @@
 ![Camera](https://img.shields.io/badge/camera-BMPCC6K-black)
 ![Video](https://img.shields.io/badge/video-HDMI%20%E2%86%92%20USB%20UVC-8A2BE2)
 
-![MagicPilot LIVE in the PRO view on the Tab5, showing the live picture, with each part of the screen labelled](images/screen-photo.svg)
+![MagicPilot LIVE on the Tab5 in the PRO view, over the camera's live HDMI picture, with each part of the screen labelled](images/pro-view-hdmi.svg)
+
+*PRO view over the camera's live HDMI picture, drawn by the firmware's own UI code.*
 
 MagicPilot LIVE turns an **M5Stack Tab5** into a monitor and touch remote for the
 **Blackmagic Pocket Cinema Camera 6K**: the camera's live HDMI picture, with the camera's settings
 laid over it. Tap a setting to change it over Bluetooth LE, using the Blackmagic Camera Control
 protocol of [MagicPilot_Remote](https://github.com/KenFilms/MagicPilot_Remote).
 
+**Everything on the main screen.** Many settings that the BMPCC6K keeps in its menus are right on
+MagicPilot LIVE's main screen, one tap away: codec and quality, the slate, clean feed, zebra, focus assist,
+false colour and guides. Camera presets and the NEAR → FAR focus slider aren't on the camera at all.
+You change them while you watch the picture, instead of digging through menus.
+
 No phone, no Wi-Fi, no Blackmagic Camera app.
+
+![MagicPilot LIVE on the Tab5 in the wireless configuration, with the HDMI RX, capture adapter, battery, plate and ports labelled](images/screen-photo.svg)
+
+*The wireless configuration: the hardware on the Tab5, labelled.*
 
 ## At a glance
 
@@ -50,6 +61,9 @@ No phone, no Wi-Fi, no Blackmagic Camera app.
   without it and leaves the USB-A port unpowered.
 - **Blackmagic Pocket Cinema Camera 6K** with Bluetooth on. The Tab5 switches the camera's status
   text off on HDMI; if it still shows, switch the HDMI overlays off on the camera (*Monitor → HDMI*).
+
+**Cost** (without the camera and without the M5 Tab battery): about **$80** wired (Tab5, capture adapter and
+HDMI cable), or about **$120** wireless (with an HDMI transmitter and receiver).
 
 ### Camera compatibility
 
