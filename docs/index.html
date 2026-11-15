@@ -223,10 +223,10 @@
 
     <section id="install">
       <h2>Install from your browser</h2>
-      <p>No PlatformIO or ESP-IDF needed. In desktop <strong>Chrome</strong> or <strong>Edge</strong>, connect the Tab5's <strong>USB-C</strong> port to the computer with a USB data cable and close any serial monitors. Click the button and choose the Tab5's port. The installer writes MagicPilot LIVE <strong>v1.0.0</strong>.</p>
+      <p>No PlatformIO or ESP-IDF needed. In desktop <strong>Chrome</strong>, <strong>Edge</strong> or <strong>Firefox</strong> (151 or later), connect the Tab5's <strong>USB-C</strong> port to the computer with a USB data cable and close any serial monitors. Click the button and choose the Tab5's port. The installer writes MagicPilot LIVE <strong>v1.0.0</strong>.</p>
       <esp-web-install-button manifest="install/manifest.json">
         <button slot="activate" class="btn">Install from your browser</button>
-        <p slot="unsupported" class="notice">This browser can't connect to USB serial devices. Open this page in desktop Chrome or Edge, or download the firmware file below.</p>
+        <p slot="unsupported" class="notice">This browser can't connect to USB serial devices. Open this page in desktop Chrome, Edge or Firefox 151 or later, or download the firmware file below.</p>
         <p slot="not-allowed" class="notice">The installer only works when this page is opened over HTTPS.</p>
       </esp-web-install-button>
       <ul>
@@ -270,7 +270,7 @@ idf.py build flash monitor</code></pre>
       <h2>Frequently asked questions</h2>
       <details>
         <summary>How do I install MagicPilot LIVE on the M5Stack Tab5?</summary>
-        <p>Open the <a href="#install">browser installer</a> in desktop Chrome or Edge, connect the Tab5's USB-C port with a USB data cable, click Install and choose the Tab5's port. No build tools are needed. To build it yourself, use PlatformIO or ESP-IDF 5.5.3 or later.</p>
+        <p>Open the <a href="#install">browser installer</a> in desktop Chrome, Edge or Firefox, connect the Tab5's USB-C port with a USB data cable, click Install and choose the Tab5's port. No build tools are needed. To build it yourself, use PlatformIO or ESP-IDF 5.5.3 or later.</p>
       </details>
       <details open>
         <summary>How do I see a Blackmagic Pocket Cinema Camera 6K's picture on the M5Stack Tab5?</summary>

@@ -4,10 +4,10 @@
 
 🌐 **Website:** [kenfilms.github.io/MagicPilot_Live](https://kenfilms.github.io/MagicPilot_Live/)
 
-[![Install MagicPilot LIVE from your browser, in Chrome or Edge, onto an M5Stack Tab5](images/install-button.svg)](https://kenfilms.github.io/MagicPilot_Live/#install)
+[![Install MagicPilot LIVE from your browser, in Chrome, Edge or Firefox, onto an M5Stack Tab5](images/install-button.svg)](https://kenfilms.github.io/MagicPilot_Live/#install)
 
 ⚡ **Easy install:** connect the Tab5's USB-C port to your computer and click **Install from your browser** in the
-[web installer](https://kenfilms.github.io/MagicPilot_Live/#install), in desktop Chrome or Edge. No build tools needed.
+[web installer](https://kenfilms.github.io/MagicPilot_Live/#install), in desktop Chrome, Edge or Firefox. No build tools needed.
 [More options](#-install-without-building)
 
 ![BlackmagicCameraControl](https://img.shields.io/badge/BlackmagicCameraControl-Aug_2025-green)
@@ -92,7 +92,7 @@ colour or playback, so the Tab5 can't show them. Reports from other cameras are 
 
 ## ⚡ Install without building
 
-Open the **[browser installer](https://kenfilms.github.io/MagicPilot_Live/#install)** in desktop Chrome or Edge,
+Open the **[browser installer](https://kenfilms.github.io/MagicPilot_Live/#install)** in desktop Chrome, Edge or Firefox (151 or later),
 connect the Tab5's **USB-C** port with a USB data cable, click **Install from your browser**, and pick
 its port. It writes the latest release (v1.0.0). You don't need PlatformIO or ESP-IDF.
 
