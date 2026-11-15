@@ -4,6 +4,8 @@
 
 🌐 **Website:** [kenfilms.github.io/MagicPilot_Live](https://kenfilms.github.io/MagicPilot_Live/)
 
+⚡ **Easy install:** [install v1.0.0 from your browser](https://kenfilms.github.io/MagicPilot_Live/#install) (desktop Chrome or Edge, Tab5 on USB-C). No build tools needed. [More options](#-install-without-building)
+
 ![BlackmagicCameraControl](https://img.shields.io/badge/BlackmagicCameraControl-Aug_2025-green)
 ![ESP-IDF](https://img.shields.io/badge/ESP--IDF-5.5.5-green)
 ![Platform](https://img.shields.io/badge/platform-M5Stack%20Tab5-blue)
