@@ -3,10 +3,12 @@
 .vscode/
 build/
 docs/*
+docs2/
 !docs/index.html
 !docs/.nojekyll
 !docs/sitemap.xml
 !docs/images/
+!docs/install/
 managed_components/
 sdkconfig
 sdkconfig.m5stack-tab5

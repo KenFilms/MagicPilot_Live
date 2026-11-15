@@ -84,6 +84,21 @@ switching between BRAW and ProRes, ProRes resolutions, Film dynamic range and th
 doesn't send card names, capacity, audio levels, custom white balance, zebra, focus assist, false
 colour or playback, so the Tab5 can't show them. Reports from other cameras are welcome.
 
+## ⚡ Install without building
+
+Open the **[browser installer](https://kenfilms.github.io/MagicPilot_Live/#install)** in desktop Chrome or Edge,
+connect the Tab5's **USB-C** port with a USB data cable, click **Install on a connected Tab5**, and pick
+its port. It writes the latest release (v1.0.0). You don't need PlatformIO or ESP-IDF.
+
+Installing clears the Tab5's settings, presets and camera pairing. Presets saved with **SAVE TO SD** stay on the
+card and come back with **LOAD FROM SD**. The ESP32-C6 keeps its factory firmware.
+
+The same image is in [`docs/install/`](docs/install/): one file, written at address `0x0`, for example with esptool:
+
+```sh
+esptool --chip esp32p4 write-flash 0x0 MagicPilot_LIVE-m5stack-tab5.bin
+```
+
 ## Build and flash
 
 PlatformIO (pioarduino platform):
@@ -218,6 +233,15 @@ BMPCC6K ◄─ Bluetooth LE ─► ESP32-C6 (controller) ◄─ SDIO, ESP-Hosted
 | `tools/check/` | `check.py` compares every preview screen, every touch area and every Bluetooth packet with `tools/check/ref` (`--update` accepts the changes) |
 
 Fonts: Open Sans (SIL Open Font License 1.1), converted by `tools/gen_fonts.py`.
+
+### Updating the browser installer
+
+```sh
+python3 tools/build_installer.py v1.0.1
+```
+
+This builds the firmware from scratch with that version, copies the merged image to `docs/install/` and writes
+`docs/install/manifest.json`. Commit `docs/install/` so GitHub Pages serves the new firmware, and tag the release.
 
 ## Disclaimer
 

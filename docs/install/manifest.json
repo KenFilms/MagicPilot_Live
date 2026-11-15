@@ -1,0 +1,16 @@
+{
+  "name": "MagicPilot LIVE",
+  "version": "v1.0.0",
+  "new_install_improv_wait_time": 0,
+  "builds": [
+    {
+      "chipFamily": "ESP32-P4",
+      "parts": [
+        {
+          "path": "MagicPilot_LIVE-m5stack-tab5.bin",
+          "offset": 0
+        }
+      ]
+    }
+  ]
+}

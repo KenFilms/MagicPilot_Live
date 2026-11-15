@@ -41,6 +41,8 @@
         "applicationCategory": "MultimediaApplication",
         "applicationSubCategory": "Camera monitor and remote control",
         "operatingSystem": "ESP32-P4 (M5Stack Tab5)",
+        "softwareVersion": "1.0.0",
+        "installUrl": "https://kenfilms.github.io/MagicPilot_Live/#install",
         "image": "https://kenfilms.github.io/MagicPilot_Live/images/rig-overview.jpg",
         "screenshot": ["https://kenfilms.github.io/MagicPilot_Live/images/pro-view-hdmi.svg", "https://kenfilms.github.io/MagicPilot_Live/images/collage.jpg"],
         "license": "https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html",
@@ -119,6 +121,9 @@
     .lead { font-size: 1.15rem; color: var(--muted); max-width: 720px; margin: 0 auto 24px; }
     .btn { display: inline-block; margin: 6px; padding: 12px 22px; border-radius: 8px; background: var(--accent); color: #fff; text-decoration: none; font-weight: 600; }
     .btn.secondary { background: transparent; border: 1px solid var(--accent); color: var(--text); }
+    button.btn { border: 0; font: inherit; font-weight: 600; cursor: pointer; margin: 6px 0; }
+    .notice { background: var(--panel); border: 1px solid #2a2a50; border-radius: 8px; padding: 12px 16px; color: var(--muted); }
+    esp-web-install-button:not(:defined) .notice { display: none; }
     img { max-width: 100%; height: auto; border-radius: 12px; display: block; }
     figure { margin: 32px 0; }
     figure a { display: block; }
@@ -141,8 +146,8 @@
     <h1>MagicPilot <span class="live">LIVE</span>: Wireless (or Wired) Monitor &amp; Bluetooth Remote for Blackmagic Pocket Cinema Cameras</h1>
     <p class="tagline">🎬 A Blackmagic camera touchscreen monitor and remote that puts settings hidden in the camera's menus on the main screen, one tap away. The whole thing for only <strong>$80</strong> wired or <strong>$120</strong> wireless.</p>
     <p class="lead">The camera's live picture with its settings on top. Tap one to change it over <strong>Bluetooth LE</strong>. Built on the <strong>M5Stack Tab5</strong>, tested with the <strong>BMPCC6K</strong>. No phone, no app.</p>
-    <a class="btn" href="https://github.com/KenFilms/MagicPilot_Live" target="_blank" rel="noopener">View on GitHub</a>
-    <a class="btn secondary" href="https://github.com/KenFilms/MagicPilot_Live#build-and-flash" target="_blank" rel="noopener">Build &amp; flash guide</a>
+    <a class="btn" href="#install">Install from your browser</a>
+    <a class="btn secondary" href="https://github.com/KenFilms/MagicPilot_Live" target="_blank" rel="noopener">View on GitHub</a>
   </header>
 
   <main>
@@ -216,8 +221,27 @@
       <p><strong>Cost</strong> (without the camera and without the M5 Tab battery): about <strong>$80</strong> wired (Tab5, capture adapter and HDMI cable), or about <strong>$120</strong> wireless (with an HDMI transmitter and receiver).</p>
     </section>
 
+    <section id="install">
+      <h2>Install from your browser</h2>
+      <p>No PlatformIO or ESP-IDF needed. In desktop <strong>Chrome</strong> or <strong>Edge</strong>, connect the Tab5's <strong>USB-C</strong> port to the computer with a USB data cable and close any serial monitors. Click the button and choose the Tab5's port. The installer writes MagicPilot LIVE <strong>v1.0.0</strong>.</p>
+      <esp-web-install-button manifest="install/manifest.json">
+        <button slot="activate" class="btn">Install on a connected Tab5</button>
+        <p slot="unsupported" class="notice">This browser can't connect to USB serial devices. Open this page in desktop Chrome or Edge, or download the firmware file below.</p>
+        <p slot="not-allowed" class="notice">The installer only works when this page is opened over HTTPS.</p>
+      </esp-web-install-button>
+      <ul>
+        <li>Installing clears the Tab5's settings, presets and camera pairing. Presets saved with <strong>SAVE TO SD</strong> stay on the microSD card and come back with <strong>LOAD FROM SD</strong>. Afterwards, pair again with the camera's PIN.</li>
+        <li>The Tab5's ESP32-C6 keeps its factory firmware: only the ESP32-P4 is written.</li>
+      </ul>
+      <details>
+        <summary>Download the firmware file</summary>
+        <p><a href="install/MagicPilot_LIVE-m5stack-tab5.bin" download>MagicPilot_LIVE-m5stack-tab5.bin</a> (v1.0.0) is a complete image, written at address <code>0x0</code>, for example with <a href="https://github.com/espressif/esptool" target="_blank" rel="noopener">esptool</a>:</p>
+        <pre><code>esptool --chip esp32p4 write-flash 0x0 MagicPilot_LIVE-m5stack-tab5.bin</code></pre>
+      </details>
+    </section>
+
     <section id="build">
-      <h2>Build and flash</h2>
+      <h2>Build and flash from source</h2>
       <p>With <a href="https://github.com/KenFilms/MagicPilot_Live#build-and-flash" target="_blank" rel="noopener">PlatformIO</a> (pioarduino platform):</p>
       <pre><code>pio run -t upload --upload-port /dev/cu.usbmodemXXXX
 pio device monitor</code></pre>
@@ -244,6 +268,10 @@ idf.py build flash monitor</code></pre>
 
     <section id="faq">
       <h2>Frequently asked questions</h2>
+      <details>
+        <summary>How do I install MagicPilot LIVE on the M5Stack Tab5?</summary>
+        <p>Open the <a href="#install">browser installer</a> in desktop Chrome or Edge, connect the Tab5's USB-C port with a USB data cable, click Install and choose the Tab5's port. No build tools are needed. To build it yourself, use PlatformIO or ESP-IDF 5.5.3 or later.</p>
+      </details>
       <details open>
         <summary>How do I see a Blackmagic Pocket Cinema Camera 6K's picture on the M5Stack Tab5?</summary>
         <p>Plug an HDMI to USB capture adapter (UVC with MJPEG, such as MS2109 or MS2130 sticks) into the Tab5's USB-A port and connect it to the camera's HDMI output, by cable or through a wireless HDMI transmitter and receiver. MagicPilot LIVE shows the picture at about 30 fps under the camera overlay.</p>
@@ -276,5 +304,6 @@ idf.py build flash monitor</code></pre>
     <p>MagicPilot LIVE is an independent open-source project and is not affiliated with, endorsed by, or sponsored by Blackmagic Design Pty. Ltd. Blackmagic Design, Blackmagic Pocket Cinema Camera, BMPCC, and related names and trademarks are the property of Blackmagic Design Pty. Ltd.</p>
     <p>© KenFilms · <a href="https://github.com/KenFilms/MagicPilot_Live" target="_blank" rel="noopener">github.com/KenFilms/MagicPilot_Live</a> · Camera protocol from <a href="https://kenfilms.github.io/MagicPilot_Remote/" target="_blank" rel="noopener">MagicPilot Remote</a></p>
   </footer>
+  <script type="module" src="https://unpkg.com/esp-web-tools@10.5.2/dist/web/install-button.js?module"></script>
 </body>
 </html>
